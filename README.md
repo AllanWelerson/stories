@@ -1,6 +1,8 @@
 
 # Stories
 
+![Alt text](/readme.png?raw=true "Screen")
+
 Interface to show stories inspired by instagram
 
 ### To install dependencies
