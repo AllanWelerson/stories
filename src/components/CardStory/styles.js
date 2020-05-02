@@ -56,7 +56,8 @@ export const ContainerSlide = styled.section`
 `;
 
 export const StoriesSlide = styled.div`
-
+  height: 100%;
+  width: 100%;
   overflow: hidden;
   
   img {
@@ -70,11 +71,37 @@ export const StoriesSlide = styled.div`
 export const BtnChangeSlide = styled.button`
   background-color: transparent;
   color: #FFF;
-  font-size: 2.5em;
-  width: 80px !important;
+  font-size: 2em;
+  width: 90px !important;
+  padding: 0 !important;
   outline: none;
 
   &:hover {
     cursor: pointer;
   }
+`;
+
+export const Progress = styled.div`
+
+  padding-bottom: 6px;
+
+  progress {
+    width: 100%;
+    height: 2px;
+    /* background: red !important; */
+    appearance: none;
+    -webkit-appearance: none;
+    /* transition: ease-in-out; */
+  }
+
+  /* progress::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+  } */
+
+  progress::-webkit-progress-value {
+    background-color: lightblue;
+  }
+
 `;

@@ -22,13 +22,12 @@ export default function ListStories() {
         <div className='title'>
           Stories
         </div>
-        <Link to='/stories' className='link'>
+        {/* <Link to='/stories' className='link'>
           See All
-        </Link>
+        </Link> */}
       </Header>
       <List>
         {data}
-       
         {/* {data}
         {data} */}
       </List>

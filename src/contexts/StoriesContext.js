@@ -5,8 +5,8 @@ export const StoriesContext = createContext();
 const StoriesProvider= ({children}) => {
   const [stories, setStories] = useState([
     { id: 1, 
-      name: 'First', 
-      photo: 'https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500',
+      name: 'Ford', 
+      photo: 'https://images.pexels.com/photos/87009/earth-soil-creep-moon-lunar-surface-87009.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       current: 0,
       list: [
       'https://images.pexels.com/photos/788200/pexels-photo-788200.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
@@ -15,15 +15,15 @@ const StoriesProvider= ({children}) => {
       ]
     },
     { id: 2, 
-      name: 'Second', 
-      photo: 'https://images.pexels.com/photos/975437/pexels-photo-975437.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      name: 'Stephen', 
+      photo: 'https://images.pexels.com/photos/19872/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       current: 0,
       list: [
       'https://images.pexels.com/photos/1034662/pexels-photo-1034662.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       'https://images.pexels.com/photos/3992446/pexels-photo-3992446.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     ]},
     { id: 3, 
-      name: 'Third',
+      name: 'Trillian',
       current: 0,
       photo: 'https://images.pexels.com/photos/1963578/pexels-photo-1963578.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
       list: [
@@ -31,11 +31,43 @@ const StoriesProvider= ({children}) => {
       'https://images.pexels.com/photos/3639542/pexels-photo-3639542.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
     ]},
     { id: 4, 
-      name: 'Fourth', 
-      photo: 'https://images.pexels.com/photos/2071555/pexels-photo-2071555.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      name: 'Wanda', 
+      photo: 'https://images.pexels.com/photos/1643773/pexels-photo-1643773.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
       current: 0,
       list: [
         'https://images.pexels.com/photos/2071555/pexels-photo-2071555.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+    ]},
+    { id: 5, 
+      name: 'Zaphod', 
+      photo: 'https://images.pexels.com/photos/23769/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      current: 0,
+      list: [
+      'https://images.pexels.com/photos/788200/pexels-photo-788200.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      'https://images.pexels.com/photos/775201/pexels-photo-775201.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      'https://images.pexels.com/photos/70365/forest-sunbeams-trees-sunlight-70365.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+      ]
+    },
+    { id: 6, 
+      name: 'Marvin', 
+      photo: 'https://images.pexels.com/photos/975437/pexels-photo-975437.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      current: 0,
+      list: [
+      'https://images.pexels.com/photos/1034662/pexels-photo-1034662.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      'https://images.pexels.com/photos/3992446/pexels-photo-3992446.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+    ]},
+    { id: 7, 
+      name: 'Arthur',
+      current: 0,
+      photo: 'https://images.pexels.com/photos/1963578/pexels-photo-1963578.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
+      list: [
+      'https://images.pexels.com/photos/3994840/pexels-photo-3994840.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
+      'https://images.pexels.com/photos/3639542/pexels-photo-3639542.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+    ]},
+    { id: 8, 
+      name: 'Steve Rogers',
+      current: 0,
+      photo: 'https://images.pexels.com/photos/1963578/pexels-photo-1963578.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 
+      list: [
     ]},
   ]);
 

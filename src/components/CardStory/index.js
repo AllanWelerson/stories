@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { FaAngleLeft, FaAngleRight, FaTimes } from 'react-icons/fa'
+import { FaAngleLeft, FaAngleRight, FaTimes, FaPause } from 'react-icons/fa'
 
-import { Container, Header, Photo, Description, StoriesSlide, BtnChangeSlide, ContainerSlide } from './styles';
+import { Container, Header, Photo, Description, StoriesSlide, BtnChangeSlide, ContainerSlide, Progress } from './styles';
 import { StoriesContext } from '../../contexts/StoriesContext';
 
 export default function CardStory({ id }) {
@@ -13,11 +13,9 @@ export default function CardStory({ id }) {
 
   const { byId, next, before, reset } = useContext(StoriesContext);
   const [story, setStory] = useState(null);
+  const [seconds, setSeconds] = useState(0);
+  const [pause, setPause] = useState(false);
   
-
-
-  const [count, setCount] = useState(0);
-  const [interval, setIntervalo] = useState(null);
 
   useEffect(() => {
     handleImg();    
@@ -27,13 +25,26 @@ export default function CardStory({ id }) {
     handleStory();
   }, []);
 
-  const handleImg = () => {
-    if(story){
-      setImg(story.list[story.current]);
-      // handleTimeVisible();
-      
+  useEffect(() => {
+    console.log(seconds);
+    if(!pause){
+      if(seconds < 400){
+        let interval = setInterval(() => {
+          setSeconds(seconds => seconds + 1);
+        } , 10);
+        return () => clearInterval(interval);
+      }else{
+        handleNext();
+        setSeconds(seconds => 0);
+      }
     }
     
+  }, [seconds, pause]);
+
+  const handleImg = () => {
+    if(story){
+      setImg(story.list[story.current]);     
+    }
   }
 
   const handleStory = () => {
@@ -47,48 +58,25 @@ export default function CardStory({ id }) {
   }
 
   const handleNext = () => {
-    next(id);
-    handleStory();
-    handleImg();  
+    if(story.current < story.list.length - 1){
+      next(id);
+      handleStory();
+      handleImg();
+      setSeconds(seconds => 0); 
+    }else{
+      reset(id);
+      history.push('/');
+    }
   }
 
   const handleBefore = () => {
     before(id);
     handleStory();
-    handleImg();  
+    handleImg();
+    setSeconds(seconds => 0);   
   }
 
-  const resetInterval = () => {
-    // setCount(0);
-    clearInterval(interval);
-    setIntervalo(null);
-    if(interval){
-      alert('interval', interval);
-      console.log(interval);
-    }
-    
-  }
 
-  // const handleTimeVisible =  function(){
-  //     let a = 0;
-
-  //     let newInterval = setInterval( function(){
-  //       a++;
-  //       console.log(a);
-  //       if(a > 100){
-  //         a = 0;
-  //         clearInterval(interval);
-  //         if(story.current < story.list.length - 1){
-  //           handleNext();
-  //         }else{
-  //           reset(id);
-  //           history.push('/');
-  //         }
-  //       }
-  //     }, 100);
-
-  //     setIntervalo(newInterval);
-  // }
 
   if(story){
     return (
@@ -106,11 +94,17 @@ export default function CardStory({ id }) {
               <Description>
                 <div>{ story.name }</div>
                 <Link to='/'>
-                  <FaTimes />
+                  { pause === true ? <FaPause className='pause' /> : <FaTimes />}
                 </Link>
               </Description>
             </Header> 
-            <img src={img} alt=""/>
+            <Progress>
+              <progress value={seconds} max='400'></progress>
+            </Progress>
+            <img  src={img} 
+                  alt="Stories Image"
+                  onMouseDown={() => setPause(true)} 
+                  onMouseUp={() => setPause(false)}/>
           </StoriesSlide>
           <BtnChangeSlide>
             { story.current < story.list.length - 1 ?  <FaAngleRight onClick={() => handleNext()}/> : '' }

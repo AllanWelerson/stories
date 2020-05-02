@@ -15,7 +15,7 @@ export const Container = styled.div`
 export const Photo = styled.div`
   background-color: #FFF;
   padding: 2px;
-  border: 1px solid red;
+  border: 1px solid #ccc;
   border-radius: 50%;
   margin-right: 15px;
   width: 40px;
