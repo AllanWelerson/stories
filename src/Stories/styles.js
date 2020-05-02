@@ -1,4 +1,11 @@
-import styled from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
+
+
+export const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: #2f3640;
+  }
+`;
 
 export const Container = styled.div`
   background-color: #2f3640;

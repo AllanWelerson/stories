@@ -7,3 +7,5 @@ Interface to show stories inspired by instagram
     $ yarn install
 ### To start application
     $ yarn start
+
+To see it working click [Here](https://stories.discordias.dev/)
