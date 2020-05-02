@@ -101,8 +101,7 @@ export default function CardStory({ id }) {
             <Progress>
               <progress value={seconds} max='400'></progress>
             </Progress>
-            <img  src={img} 
-                  alt="Stories Image"
+            <img  src={img} alt="Stories"
                   onMouseDown={() => setPause(true)} 
                   onMouseUp={() => setPause(false)}/>
           </StoriesSlide>

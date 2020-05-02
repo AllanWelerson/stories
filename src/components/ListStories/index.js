@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 import { Container, Header, List } from './styles';
 
@@ -28,8 +28,6 @@ export default function ListStories() {
       </Header>
       <List>
         {data}
-        {/* {data}
-        {data} */}
       </List>
 
     </Container>
